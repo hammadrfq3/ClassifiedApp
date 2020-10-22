@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:padding="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/personalReceiverImageView"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/chat_text_receiver_bg"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/personalReceiverImageView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/personalReceiverTimeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10:05" />
+
+        <TextView
+            android:id="@+id/personalReceiverMsgTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hi, how are you?" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

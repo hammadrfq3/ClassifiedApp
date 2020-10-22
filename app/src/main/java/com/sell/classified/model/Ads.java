@@ -1,6 +1,6 @@
 package com.sell.classified.model;
 
-public class LatestAds {
+public class Ads {
 
     private int LatestAdId;
     private String LatestAdName;

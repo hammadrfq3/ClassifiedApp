@@ -1,6 +1,7 @@
 package com.sell.classified.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.sell.classified.uiActivities.CategoryDetailActivity;
+import com.sell.classified.uiActivities.CategoryAll;
 import com.sell.classified.R;
 import com.sell.classified.model.Category;
 
@@ -40,6 +43,21 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Holder
 
         int resourceId=context.getResources().getIdentifier(category.getCategoryImage(),"drawable",context.getPackageName());
         holder.imageView.setImageResource(resourceId);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                TextView textView=view.findViewById(R.id.categoryItemTextView);
+
+                if(textView.getText().toString().contentEquals("Show All")){
+                    context.startActivity(new Intent(context, CategoryAll.class));
+                }else {
+                    context.startActivity(new Intent(context, CategoryDetailActivity.class));
+                }
+
+            }
+        });
     }
 
     @Override

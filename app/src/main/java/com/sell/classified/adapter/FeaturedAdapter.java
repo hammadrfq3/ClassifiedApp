@@ -1,6 +1,7 @@
 package com.sell.classified.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sell.classified.R;
 import com.sell.classified.model.Category;
 import com.sell.classified.model.Featured;
+import com.sell.classified.uiActivities.AdDetailActivity;
 
 import java.util.ArrayList;
 
@@ -43,6 +45,15 @@ public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.Holder
 
         int resourceId=context.getResources().getIdentifier(featured.getFeaturedItemImage(),"drawable",context.getPackageName());
         holder.imageView.setImageResource(resourceId);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                context.startActivity(new Intent(context, AdDetailActivity.class));
+
+            }
+        });
     }
 
     @Override
